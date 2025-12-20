@@ -27,11 +27,19 @@ public class DashboardFrame extends JFrame {
         JButton btnLaporan = createMenuButton("Laporan / Riwayat");
         JButton btnKeluar = createMenuButton("Keluar");
 
-        //tombol ini diarahkan ke frame masing-masing
-        btnPelanggan.addActionListener(e -> JOptionPane.showMessageDialog(this, "Menu Pelanggan (belum dibuat)"));
-        btnKendaraan.addActionListener(e -> JOptionPane.showMessageDialog(this, "Menu Kendaraan (belum dibuat)"));
-        btnTransaksi.addActionListener(e -> JOptionPane.showMessageDialog(this, "Menu Transaksi (belum dibuat)"));
-        btnLaporan.addActionListener(e -> JOptionPane.showMessageDialog(this, "Menu Laporan (belum dibuat)"));
+        // ✅ buka CustomerFrame (bukan popup)
+        btnPelanggan.addActionListener(e -> new CustomerFrame().setVisible(true));
+
+        // ✅ kendaraan sudah benar
+        btnKendaraan.addActionListener(e -> new VehicleFrame().setVisible(true));
+
+        btnTransaksi.addActionListener(e ->
+                JOptionPane.showMessageDialog(this, "Menu Transaksi belum dibuat")
+        );
+
+        btnLaporan.addActionListener(e ->
+                JOptionPane.showMessageDialog(this, "Menu Laporan belum dibuat")
+        );
 
         btnKeluar.addActionListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(
