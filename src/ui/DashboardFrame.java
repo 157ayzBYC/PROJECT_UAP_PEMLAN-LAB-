@@ -33,14 +33,13 @@ public class DashboardFrame extends JFrame {
         // ✅ kendaraan sudah benar
         btnKendaraan.addActionListener(e -> new VehicleFrame().setVisible(true));
 
-        btnTransaksi.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Menu Transaksi belum dibuat")
-        );
+        // Tombol Transaksi membuka TransaksiServiceFrame
+        btnTransaksi.addActionListener(e -> new TransaksiServiceFrame().setVisible(true));
 
-        btnLaporan.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Menu Laporan belum dibuat")
-        );
+        // Tombol Laporan membuka LaporanFrame
+        btnLaporan.addActionListener(e -> new LaporanFrame().setVisible(true));
 
+        // Tombol Keluar untuk menutup aplikasi
         btnKeluar.addActionListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(
                     this,
@@ -55,8 +54,8 @@ public class DashboardFrame extends JFrame {
 
         panelMenu.add(btnPelanggan);
         panelMenu.add(btnKendaraan);
-        panelMenu.add(btnTransaksi);
-        panelMenu.add(btnLaporan);
+        panelMenu.add(btnTransaksi);  // Menambahkan tombol Transaksi
+        panelMenu.add(btnLaporan);    // Menambahkan tombol Laporan
         panelMenu.add(btnKeluar);
 
         setLayout(new BorderLayout());

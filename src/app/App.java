@@ -1,10 +1,10 @@
 package app;
 
-import javax.swing.SwingUtilities;
-import ui.DashboardFrame;
+import ui.DashboardFrame;  // Pastikan import ini ada
 
 public class App {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new DashboardFrame().setVisible(true));
+        // Menjalankan aplikasi dan menampilkan Dashboard terlebih dahulu
+        javax.swing.SwingUtilities.invokeLater(() -> new DashboardFrame().setVisible(true));
     }
 }
